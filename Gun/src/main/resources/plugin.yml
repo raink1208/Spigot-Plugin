@@ -1,0 +1,8 @@
+name: Gun
+version: @version@
+main: com.rain1208.gun.Gun
+api-version: 1.13
+
+commands:
+  gun:
+    description: "aaa"

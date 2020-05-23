@@ -40,15 +40,16 @@ class Gun : JavaPlugin(), Listener {
             if (ev.item != null && ev.item!!.type == Material.STICK && ev.item!!.itemMeta?.displayName == "gun") {
                 val p: Player = ev.player
                 var pos:Location = p.location
+                pos.y += 1
                 pos.world!!.playSound(pos,Sound.ENTITY_FIREWORK_ROCKET_BLAST,0.1f,1.0f) //発射地点
-                for (i in 0..300) { //射程
-                    pos = pos.add(pos.direction.x,pos.direction.y - 0.005,pos.direction.z)
+                for (i in 0..300) { //射程 300*0.02
+                    pos = pos.add(pos.direction.x,pos.direction.y-0.002f,pos.direction.z)
                     pos.world!!.playSound(pos,Sound.ENTITY_FIREWORK_ROCKET_BLAST,0.1f,1.0f) //パーティクル上
-                    ev.player.world.spawnParticle(Particle.VILLAGER_ANGRY,pos, 1, 0.02, 0.02, 0.05, 4.0)
+                    ev.player.world.spawnParticle(Particle.VILLAGER_ANGRY,pos, 1, 0.02, 0.02, 0.02, 4.0)
 
                     for (entity in getEntitiesByPos(pos,0.55f)) {
                         if (entity is LivingEntity) {
-                            entity.damage(4.0)
+                            entity.damage(5.0) //ダメージ量
                         }
                     }
                     if (pos.block.type.isSolid) {

@@ -1,0 +1,11 @@
+gun:
+  range: 300
+  damage: 5.0
+  radius: 0.6
+  effect: 1
+
+gun2:
+  range: 500
+  damage: 10.0
+  radius: 0.6
+  effect: 0

@@ -1,0 +1,14 @@
+name: KakeCraftOni
+version: @version@
+main: com.rain1208.kakecraftoni.KakeCraftOni
+api-version: 1.13
+
+commands:
+  bdstart:
+    description: start
+  bdstop:
+    description: stop
+  force:
+    description: ForcedStop
+  ai:
+    description: ai
